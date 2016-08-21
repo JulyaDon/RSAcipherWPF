@@ -7,6 +7,76 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Viewbox>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="GreetingText"
+                           Grid.Row="0"
+                           Text="Enter Your sentence:"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="50"
+                           RenderTransformOrigin="0.5,0.5"
+                           FontWeight="Bold"/>
+                <TextBox x:Name="FirstName"
+                           Grid.Row="1"
+                           Text=""
+                           FontSize="25"
+                           Margin="10"
+                           Height="45" />
+                <TextBlock x:Name="EnterP"
+                           Grid.Row="2"
+                           Text="Enter simple number p:"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="50"
+                           RenderTransformOrigin="0.5,0.5"
+                           FontWeight="Bold"/>
+                <TextBox x:Name="simpleP"
+                           Grid.Row="3"
+                           Text=""
+                           FontSize="25"
+                           Margin="10"
+                           Height="45" />
+                <TextBlock x:Name="EnterQ"
+                           Grid.Row="4"
+                           Text="Enter simple number q:"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="50"
+                           RenderTransformOrigin="0.5,0.5"
+                           FontWeight="Bold"/>
+                <TextBox x:Name="simpleQ"
+                           Grid.Row="5"
+                           Text=""
+                           FontSize="25"
+                           Margin="10"
+                           Height="45" />
+                <Button x:Name="GreetMeButton"
+                        Width="100"
+                        Height="45"
+                        Grid.Row="6"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Content="Cipher" Click="GreetMeButton_Click" />
+                <TextBlock x:Name="CipheredText"
+                           Grid.Row="7"
+                           Text=""
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="50"
+                           RenderTransformOrigin="0.5,0.5"
+                           FontWeight="Bold"/>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Window>

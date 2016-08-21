@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime.InteropServices;
 
 namespace RSAcipherWPF
 {
@@ -20,9 +21,21 @@ namespace RSAcipherWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        [DllImport("RSAcipherDLL.dll", EntryPoint = "mainRSA", CallingConvention = CallingConvention.Cdecl, ExactSpelling = false, CharSet = CharSet.Ansi)]
+        public static extern IntPtr mainRSA([MarshalAs(UnmanagedType.LPStr)]string sentence, int p, int q);
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void GreetMeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(FirstName.Text))
+            {
+                IntPtr resultPtr = mainRSA(FirstName.Text, Convert.ToInt32(simpleP.Text), Convert.ToInt32(simpleQ.Text));
+
+                string resultString = Marshal.PtrToStringAnsi(resultPtr);
+                CipheredText.Text = resultString;
+            }
         }
     }
 }
