@@ -33,6 +33,11 @@ Message Cipher::doCipher(Message* message) {
 //
 //}
 
+Cipher::Cipher(void):sentence("")
+{
+
+}
+
 Cipher:: ~Cipher(void)
 {
 }
